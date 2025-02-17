@@ -1,0 +1,15 @@
+import numpy as np
+a=np.array([[1,2,3],[4,5,6]])
+print(a.ndim)
+print(a.shape)
+b=np.array([[1,2,3],[4,7,8]])
+a+=2
+print(a)
+aones=np.ones(a.shape,dtype='int32')
+print(aones)
+bzeros=np.zeros((4,4),dtype='int32')
+print(bzeros)
+identity=np.identity((5),dtype='int32')
+print(identity)
+full=np.full((3,4),9,dtype='int32')
+print(full)

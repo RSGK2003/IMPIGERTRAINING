@@ -1,35 +1,35 @@
 import time
 from threading import *
-# def thread_process(num,sleeptime,name):
-#     for i in range(num):
-#         print(name,i)
-#         time.sleep(1)
-# t1=threading.Thread(target=thread_process,args=(3,1,"one"))
-# t1.start()
-# t2=threading.Thread(target=thread_process,args=(2,1,"Two"))
-# t2.start()
-# l=threading.Lock()
-# def lockandunlock(d):
-#     l.acquire()
-#     execute(d)
-#     l.release()
-# def execute(d):
-#     for i in range(5):
-#         print(d)
-# t3=threading.Thread(target=lockandunlock,args=("Hi",))
-# t4=threading.Thread(target=lockandunlock,args=("Hello",))
-# t3.start()
-# t4.start()
-# t3.join()
-# t4.join()
-# s=Semaphore(2)
-# def source(d):
-#     s.acquire()
-#     print(d)
-#     s.release()
-# for i in range(5):
-#     t=Thread(target=source,args=(f'hi{i}',))
-#     t.start()
+def thread_process(num,sleeptime,name):
+    for i in range(num):
+        print(name,i)
+        time.sleep(1)
+t1=Thread(target=thread_process,args=(3,1,"one"))
+t1.start()
+t2=Thread(target=thread_process,args=(2,1,"Two"))
+t2.start()
+l=Lock()
+def lockandunlock(d):
+    l.acquire()
+    execute(d)
+    l.release()
+def execute(d):
+    for i in range(5):
+        print(d)
+t3=Thread(target=lockandunlock,args=("Hi",))
+t4=Thread(target=lockandunlock,args=("Hello",))
+t3.start()
+t4.start()
+t3.join()
+t4.join()
+s=Semaphore(2)
+def source(d):
+    s.acquire()
+    print(d)
+    s.release()
+for i in range(5):
+    t=Thread(target=source,args=(f'hi{i}',))
+    t.start()
 #TASK
 def t_main():
     print("This is process 1")
